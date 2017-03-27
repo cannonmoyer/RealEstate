@@ -1,0 +1,38 @@
+<center><h2>Listings</h2></center>
+<%= link_to "Create Listing", new_listing_path, class: "btn btn-primary btn-sm" %>
+<table class="table table-bordered">
+		<th>Created At</th> 
+		<th>Name</th> 
+		<th>Address</th>
+		<th>City</th> 
+		<th>State</th> 
+		<th>Zip</th>
+		<th>Edit</th> 
+		<th>Destroy</th> 
+
+		<% @listings.each do |f| %>
+		
+			<tr>
+			
+				<td><%= f.created_at %></td>
+				<td><%= f.name %></td>
+				<td><%= f.address %></td>
+				<td><%= f.city %></td>
+				<td><%= f.state %></td>
+				<td><%= f.zip %></td>
+				
+				<td><%= link_to "", edit_listing_path(f), class: "glyphicon glyphicon-pencil" %> </td>\
+				<td><%= link_to "", listing_path(f), data:{confirm: 'Are you sure?'}, class: "glyphicon glyphicon-trash",  method: :delete %></td>
+				
+			</tr>
+		<% end %>
+</table>
+
+
+
+
+<style>
+
+body{
+	background-color: #FFFFFF !important;
+}
